@@ -1,0 +1,96 @@
+body {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+
+.choose {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 20px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+.figure {
+  width: 50px;
+  height: 50px;
+  background-color: orange;
+  margin-right: 20px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 30px;
+  color: #fff;
+  -webkit-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+  cursor: pointer; }
+
+.active {
+  background-color: red; }
+
+.figure:hover {
+  background-color: red; }
+
+#game {
+  width: 540px;
+  height: 540px;
+  background-color: orange; }
+
+.block {
+  width: 180px;
+  height: 180px;
+  float: left;
+  border: 1px solid white;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  line-height: 200px;
+  text-align: center;
+  font-size: 80px;
+  -webkit-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+  text-transform: uppercase;
+  color: #fff; }
+
+.rules {
+  font-size: 25px; }
+
+.restart {
+  width: 200px;
+  height: 40px;
+  margin-bottom: 10px;
+  background-color: transparent;
+  border-color: black;
+  -webkit-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s; }
+
+.restart:hover {
+  background-color: orange; }
+
+@media screen and (max-width: 500px) {
+  .block {
+    width: 100px;
+    height: 100px;
+    font-size: 40px;
+    line-height: 100px; }
+  #game {
+    width: 300px;
+    height: 300px; } }
