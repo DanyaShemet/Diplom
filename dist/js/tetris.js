@@ -6,6 +6,7 @@ window.onload = function(){
     let timer;
     let score = 0;
     let flag; // запуск след блока
+    let time = 250;
 
 
     // Заповнюємо массив
@@ -86,7 +87,7 @@ window.onload = function(){
             checkLine();
             if (flag) square();
             run();
-        }, 250);
+        }, time);
     }
     // Переміщення елемента праворуч
     function tetrisRight() {
@@ -121,11 +122,28 @@ window.onload = function(){
         for (let i = tetris.length - 1; i >= 0; i--) {
             for (let j = 0; j < tetris[i].length; j++) {
                 if (tetris[i][j] > 10 && tetris[i][j + 1] != undefined && tetris[i][j + 2] != undefined) {
+                    
                     if (tetris[i][j] == tetris[i][j + 1] && tetris[i][j] == tetris[i][j + 2]) {
+                        if((tetris[i][j] == 1 || tetris[i][j] ==  11) 
+                        && (tetris[i][j+1] == 1 || tetris[i][j+1] == 11) 
+                        && (tetris[i][j+2] == 1 || tetris[i][j+2] == 11))
+                        {
+                            time -= 15;
+                        }
+                        else if((tetris[i][j] == 3 || tetris[i][j] ==  13) 
+                        && (tetris[i][j+1] == 3 || tetris[i][j+1] == 13) 
+                        && (tetris[i][j+2] == 3 || tetris[i][j+2] == 13))
+                        {
+                            time += 10;
+                        }else{
+                            time -= 5;
+                        }
                         tetris[i][j] = 0;
                         tetris[i][j + 1] = 0;
                         tetris[i][j + 2] = 0;
                         score += 30;
+                 
+                       
                         for (let m = i; m >= 0; m--) {
                             if (tetris[m][j] > 10) tetris[m][j] = tetris[m][j] - 10;
                             if (tetris[m][j + 1] > 10) tetris[m][j + 1] = tetris[m][j + 1] - 10;
@@ -133,6 +151,7 @@ window.onload = function(){
                         }
                     }
                 }
+                
             }
         }
     }

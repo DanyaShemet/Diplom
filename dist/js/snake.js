@@ -17,7 +17,8 @@ window.onload = function() {
     tail 				= 100, // хвіст
     tailSafeZone		= 20, // голова
     cooldown			= false, // 
-    score				= 0; // рахунок
+    score		= 0; // рахунок
+    kus = 0;
 
   // основна функція
   function loop()
@@ -54,20 +55,24 @@ window.onload = function() {
       ctx.fillRect(trail[i].x, trail[i].y, pw, ph);
       
     }
-    console.log(trail[1], trail[1]);
+    // console.log(trail[1], trail[1]);
     ctx.fillText(score, 50, 50, 100);
     trail.push({x: px, y: py, color: ctx.fillStyle});
   
     // їсть себе
     if( trail.length > tail )
     {
+      
       trail.shift();
     }
     if( trail.length > tail )
     {
       trail.shift();
-      score = 0;
     }
+    
+    
+    
+    
   
     // відкусування хвоста
     if( trail.length >= tail && gs )
@@ -83,6 +88,7 @@ window.onload = function() {
         {
           tail = 10; // відкусує хвіст
           speed = baseSpeed; // швидкість стає базовою
+          score = 2;
   
           for( let t = 0; t < trail.length; t++ )
           {

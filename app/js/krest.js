@@ -14,7 +14,7 @@ figure.onclick = function(e){
     }
     if(o){
         document.querySelector('.krest').classList.remove('active');
-        way = 1;
+        way = 1
         e.target.classList.toggle('active')
     }
 }
@@ -25,11 +25,11 @@ window.onload = function(){
     }
     game.onclick = function(e){
         if(e.target.className == 'block'){
-            if(way % 2 == 0){ 
-                e.target.innerHTML = 'x';  
-            }else{
+            if(way % 2 == 0 && !(e.target.innerHTML == 'o')){ 
+                e.target.innerHTML = 'x';
+            }else if(!(e.target.innerHTML == 'x')){
                 e.target.innerHTML = 'o';  
-            }
+            } 
             way++
             checkWinner();
         }
@@ -49,10 +49,10 @@ window.onload = function(){
         
         for (let i=0; i<matrix.length; i++){
             if (allblock[matrix[i][0]].innerHTML == 'x' && allblock[matrix[i][1]].innerHTML == 'x' && allblock[matrix[i][2]].innerHTML == 'x'){
-                alert("Победил игрок 1 (X) ");
+                alert("Переміг гравець 1 (X) ");
             }
             if (allblock[matrix[i][0]].innerHTML == 'o' && allblock[matrix[i][1]].innerHTML == 'o' && allblock[matrix[i][2]].innerHTML == 'o'){
-                alert("Победил игрок 2 (O)");
+                alert("Переміг гравець 2 (O)");
             }
         } 
        
