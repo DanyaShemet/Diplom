@@ -102,3 +102,8 @@
 .front-face {
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg); }
+
+@media screen and (max-width: 600px) {
+  .memory-game {
+    width: 330px;
+    height: 330px; } }
