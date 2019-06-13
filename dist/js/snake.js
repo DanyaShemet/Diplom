@@ -23,6 +23,7 @@ window.onload = function() {
   // основна функція
   function loop()
   {
+   
     ctx.fillStyle = 'black';
     ctx.fillRect(0, 0, canv.width, canv.height);
   
@@ -68,11 +69,7 @@ window.onload = function() {
     {
       trail.shift();
     }
-    
-    
-    
-    
-  
+
     // відкусування хвоста
     if( trail.length >= tail && gs )
     {
@@ -87,7 +84,7 @@ window.onload = function() {
         {
           tail = 10; // відкусує хвіст
           speed = baseSpeed; // швидкість стає базовою
-          score = 2;
+          score = 1;
   
           for( let t = 0; t < trail.length; t++ )
           {

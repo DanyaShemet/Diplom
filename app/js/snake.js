@@ -69,11 +69,7 @@ window.onload = function() {
     {
       trail.shift();
     }
-    
-    
-    
-    
-  
+
     // відкусування хвоста
     if( trail.length >= tail && gs )
     {
@@ -88,7 +84,7 @@ window.onload = function() {
         {
           tail = 10; // відкусує хвіст
           speed = baseSpeed; // швидкість стає базовою
-          score = 2;
+          score = 1;
   
           for( let t = 0; t < trail.length; t++ )
           {

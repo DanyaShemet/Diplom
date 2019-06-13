@@ -7,12 +7,16 @@ let allblock = document.getElementsByClassName('block');
 figure.onclick = function(e){
     let x = e.target.innerHTML =='x';
     let o = e.target.innerHTML =='o';
-    if(x && !(document.querySelector('.krest').classList.contains('active')) && !(document.querySelector('.circle').classList.contains('active'))){
+    if(x && !(document.querySelector('.krest').classList.contains('active')) && 
+    !(document.querySelector('.circle').classList.contains('active')) && way == 0)
+    {
         document.querySelector('.circle').classList.remove('active');
         way = 0;
         e.target.classList.toggle('active');
     }
-    if(o && !(document.querySelector('.circle').classList.contains('active')) && !(document.querySelector('.krest').classList.contains('active'))){
+    if(o && !(document.querySelector('.circle').classList.contains('active')) && 
+    !(document.querySelector('.krest').classList.contains('active')) && way == 0)
+    {
         document.querySelector('.krest').classList.remove('active');
         way = 1
         e.target.classList.toggle('active')
@@ -57,9 +61,15 @@ window.onload = function(){
         } 
        
     }
-    restart.onclick = function(){
+    restart.onclick = function(e){
+        
         for(let i=0;i<allblock.length;i++){
             allblock[i].innerHTML = '';
         }
+        document.querySelectorAll('.figure').forEach(function(el){
+            el.classList.remove('active');
+        })
+        way = 0;
+        // window.location.reload();
     }
 }
