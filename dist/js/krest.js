@@ -7,12 +7,12 @@ let allblock = document.getElementsByClassName('block');
 figure.onclick = function(e){
     let x = e.target.innerHTML =='x';
     let o = e.target.innerHTML =='o';
-    if(x){
+    if(x && !(document.querySelector('.krest').classList.contains('active')) && !(document.querySelector('.circle').classList.contains('active'))){
         document.querySelector('.circle').classList.remove('active');
         way = 0;
         e.target.classList.toggle('active');
     }
-    if(o){
+    if(o && !(document.querySelector('.circle').classList.contains('active')) && !(document.querySelector('.krest').classList.contains('active'))){
         document.querySelector('.krest').classList.remove('active');
         way = 1
         e.target.classList.toggle('active')
