@@ -54,22 +54,24 @@ window.onload = function(){
         for (let i=0; i<matrix.length; i++){
             if (allblock[matrix[i][0]].innerHTML == 'x' && allblock[matrix[i][1]].innerHTML == 'x' && allblock[matrix[i][2]].innerHTML == 'x'){
                 alert("Переміг гравець 1 (X) ");
+                game.onclick = false
             }
             if (allblock[matrix[i][0]].innerHTML == 'o' && allblock[matrix[i][1]].innerHTML == 'o' && allblock[matrix[i][2]].innerHTML == 'o'){
                 alert("Переміг гравець 2 (O)");
+                game.onclick = false
             }
         } 
        
     }
-    restart.onclick = function(e){
-        
-        for(let i=0;i<allblock.length;i++){
-            allblock[i].innerHTML = '';
-        }
-        document.querySelectorAll('.figure').forEach(function(el){
-            el.classList.remove('active');
-        })
-        way = 0;
-        // window.location.reload();
+    restart.onclick = setDefault
+}
+
+function setDefault() {
+    for(let i=0;i<allblock.length;i++){
+        allblock[i].innerHTML = '';
     }
+    document.querySelectorAll('.figure').forEach(function(el){
+        el.classList.remove('active');
+    });
+    way = 0;
 }

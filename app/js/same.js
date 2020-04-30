@@ -82,6 +82,7 @@ function flipCard() {
 		}
 		if(count == 12){
 			alert('Молодець! В тебе вийшло!');
+			location.reload()
 		}
 	})
 	if (!hasFlippedCard) {

@@ -19,6 +19,7 @@ window.onload = function(){
                 tetris[i][j] = 0; // пустое поле
             }
         }
+        document.querySelector('.start').setAttribute('disabled', true)
     }
     //Малюєм ігрове поле
     function draw(){
@@ -42,7 +43,7 @@ window.onload = function(){
         }
         tetrisField.innerHTML = out; // перерисовка
         scoreField.innerHTML = score; // вывод очков
-        // console.log(tetris);
+        console.log(tetris);
     }
     // Малюєм ігровий кург
     function square(){
@@ -66,7 +67,6 @@ window.onload = function(){
                     if (tetris[i][j] < 10) {
                         if (i == tetris.length - 1 && tetris[i][j] != 0) {
                             tetris[i][j] = tetris[i][j] + 10;
-
                         }
                         else if (tetris[i][j] != 0) {
                             if (tetris[i + 1][j] == 0) {
@@ -120,19 +120,20 @@ window.onload = function(){
     // Перевірка на три в ряд
     function checkLine() {
         for (let i = tetris.length - 1; i >= 0; i--) {
+
             for (let j = 0; j < tetris[i].length; j++) {
+
                 if (tetris[i][j] > 10 && tetris[i][j + 1] != undefined && tetris[i][j + 2] != undefined) {
-                    
-                    if (tetris[i][j] == tetris[i][j + 1] && tetris[i][j] == tetris[i][j + 2]) {
-                        if((tetris[i][j] == 1 || tetris[i][j] ==  11) 
-                        && (tetris[i][j+1] == 1 || tetris[i][j+1] == 11) 
-                        && (tetris[i][j+2] == 1 || tetris[i][j+2] == 11))
+                    if (tetris[i][j] == tetris[i][j + 1] && tetris[i][j] == tetris[i][j + 2] ) {
+                        if((tetris[i][j] ==  11)
+                        && (tetris[i][j+1] == 11)
+                        && (tetris[i][j+2] == 11))
                         {
                             time -= 15;
                         }
-                        else if((tetris[i][j] == 3 || tetris[i][j] ==  13) 
-                        && (tetris[i][j+1] == 3 || tetris[i][j+1] == 13) 
-                        && (tetris[i][j+2] == 3 || tetris[i][j+2] == 13))
+                        else if((tetris[i][j] ==  13)
+                        && (tetris[i][j+1] == 13)
+                        && (tetris[i][j+2] == 13))
                         {
                             time += 10;
                         }else{
@@ -169,7 +170,8 @@ window.onload = function(){
                 }
                 if(stop){
                     clearTimeout(timer);
-                    alert('stop');
+                    alert('Гру закінчено');
+                    location.reload()
                     break;
                 }
             }

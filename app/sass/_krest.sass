@@ -1,0 +1,62 @@
+body
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    
+.choose
+    display: flex
+    margin-bottom: 20px
+    justify-content: center
+.figure
+    width: 50px
+    height: 50px
+    background-color: orange
+    margin-right: 20px
+    line-height: 40px
+    text-align: center
+    font-size: 30px
+    color: #fff
+    transition: 1s
+    cursor: pointer
+.active
+    background-color: red
+.figure:hover
+    background-color: red
+#game  
+    width: 540px
+    height: 540px
+    background-color: orange
+
+.block
+    width: 180px
+    height: 180px
+    float: left
+    border: 1px solid white
+    box-sizing: border-box
+    line-height: 200px
+    text-align: center
+    font-size: 80px
+    transition: 1s
+    text-transform: uppercase
+    color: #fff
+.rules
+    font-size: 25px
+.restart
+    width: 200px  
+    height: 40px
+    margin-bottom: 10px 
+    background-color: transparent
+    border-color: black
+    transition: 1s
+.restart:hover
+    background-color: orange
+@media screen and (max-width: 500px)
+    .block
+        width: 100px
+        height: 100px
+        font-size: 40px
+        line-height: 100px
+    #game  
+        width: 300px
+        height: 300px

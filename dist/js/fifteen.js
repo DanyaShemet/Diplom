@@ -137,7 +137,8 @@ function event(x, y) {
 	context.fillRect(0, 0, canvas.width, canvas.height);
 	game.draw();
 		if (game.victory()) {
-			alert("Зібрано за "+game.getClicks()+" дотик!"); 
+			alert("Зібрано за "+game.getClicks()+" дотик!");
+			location.reload()
 			game.mix(300);
 			context.fillRect(0, 0, canvas.width, canvas.height);
 				game.draw(context, cellSize);
