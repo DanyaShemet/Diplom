@@ -1,1 +1,2 @@
-# Kursova
+# Diplom work
+# NPU Dragomanoova
